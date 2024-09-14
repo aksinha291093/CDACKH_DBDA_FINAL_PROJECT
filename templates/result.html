@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Bill - Fruits and Vegetable Price Recognition System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/images/background4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .details {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .details p {
+            font-size: 18px;
+            color: #2c3e50;
+            margin: 15px 0;
+            line-height: 1.6;
+            border-left: 5px solid #2c3e50;
+            padding-left: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .details strong {
+            color: #e74c3c;
+        }
+        .details img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Final Bill</h1>
+        <div class="details">
+            <p><strong>Customer Name:</strong> {{ name }}</p>
+            <p><strong>Mobile Number:</strong> {{ mobile }}</p>
+            {% if image %}
+            <img src="{{ image }}" alt="Uploaded Image">
+            {% endif %}
+            <p><strong>Item Name:</strong> {{ predict }}</p>
+            <p><strong>Quantity:</strong> {{ quantity }} kg</p>
+            <p><strong>Price per kg:</strong> Rs. {{ price_per_kg }}</p>
+            <p><strong>Total Price:</strong> Rs. {{ total_price }}</p>
+        </div>
+    </div>
+</body>
+</html>
